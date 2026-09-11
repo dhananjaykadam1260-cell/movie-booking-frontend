@@ -1,0 +1,439 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* =========================
+   ADMIN LAYOUT
+========================= */
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f5f7;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.admin-sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: #171717;
+  color: white;
+
+  padding: 28px 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  z-index: 1000;
+}
+
+.admin-logo {
+  color: #f84464;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+.admin-user {
+  background: #222;
+  padding: 12px 15px;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 25px;
+}
+
+.admin-user small {
+  color: #888;
+  font-size: 12px;
+}
+
+.admin-user strong {
+  color: white;
+  margin-top: 3px;
+}
+
+/* =========================
+   SIDEBAR NAVIGATION
+========================= */
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.admin-nav-link {
+  color: #bbb;
+
+  text-decoration: none;
+
+  padding: 12px 15px;
+
+  border-radius: 8px;
+
+  transition: 0.2s;
+}
+
+.admin-nav-link:hover {
+  background: #292929;
+  color: white;
+}
+
+.admin-nav-link.active {
+  background: #f84464;
+  color: white;
+}
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+
+.admin-logout {
+  margin-top: auto;
+
+  border: none;
+
+  background: #2a2a2a;
+  color: white;
+
+  padding: 12px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.admin-logout:hover {
+  background: #f84464;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.admin-content {
+  margin-left: 250px;
+
+  width: calc(100% - 250px);
+
+  min-height: 100vh;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.admin-topbar {
+  height: 75px;
+
+  background: white;
+
+  padding: 15px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #eee;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 500;
+}
+
+.admin-topbar h5 {
+  font-weight: 700;
+}
+
+.admin-topbar span {
+  background: #f84464;
+
+  color: white;
+
+  padding: 8px 18px;
+
+  border-radius: 20px;
+
+  font-size: 14px;
+}
+
+/* =========================
+   PAGE CONTENT
+========================= */
+
+.admin-page-content {
+  padding: 30px;
+}
+
+.admin-page-content h2 {
+  font-weight: 700;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.admin-page-content .card {
+  border: none;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* Dashboard cards */
+
+.admin-page-content .row .card {
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.admin-page-content .row .card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.1);
+}
+
+.admin-page-content .card h2 {
+  color: #f84464;
+  font-weight: 800;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.admin-page-content label {
+  font-weight: 600;
+
+  margin-bottom: 6px;
+
+  display: block;
+}
+
+.admin-page-content .form-control {
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+
+  padding: 10px 12px;
+}
+
+.admin-page-content .form-control:focus {
+  border-color: #f84464;
+
+  box-shadow:
+    0 0 0 0.15rem rgba(248, 68, 100, 0.15);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.admin-page-content .btn-primary {
+  background: #f84464;
+
+  border-color: #f84464;
+}
+
+.admin-page-content .btn-primary:hover {
+  background: #e73355;
+
+  border-color: #e73355;
+}
+
+.admin-page-content .btn-warning {
+  color: white;
+
+  background: #ff9800;
+
+  border-color: #ff9800;
+}
+
+.admin-page-content .btn-danger {
+  background: #dc3545;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.admin-page-content table {
+  margin-bottom: 0;
+}
+
+.admin-page-content thead th {
+  background: #f6f6f7;
+
+  border-color: #eee;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.admin-page-content tbody td {
+  vertical-align: middle;
+}
+
+.admin-page-content tbody tr:hover {
+  background: #fafafa;
+}
+
+/* =========================
+   MOVIE POSTER
+========================= */
+
+.movie-mini-poster {
+  width: 45px;
+
+  height: 65px;
+
+  object-fit: cover;
+
+  border-radius: 6px;
+}
+
+/* =========================
+   ADMIN LOGIN
+========================= */
+
+.admin-login-page {
+  min-height: 100vh;
+
+  background: #111;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+.admin-login-card {
+  width: 420px;
+
+  max-width: 100%;
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.admin-login-card h2 {
+  color: #f84464;
+
+  font-weight: 800;
+
+  text-align: center;
+}
+
+.admin-login-card p {
+  color: #777;
+
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.admin-login-card label {
+  font-weight: 600;
+
+  margin-bottom: 6px;
+}
+
+.admin-login-card input {
+  padding: 11px;
+}
+
+.admin-login-card .btn {
+  background: #f84464;
+
+  border-color: #f84464;
+}
+
+.admin-login-card .btn:hover {
+  background: #e73355;
+
+  border-color: #e73355;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .admin-sidebar {
+    width: 190px;
+
+    padding: 20px 12px;
+  }
+
+  .admin-content {
+    margin-left: 190px;
+
+    width: calc(100% - 190px);
+  }
+
+  .admin-page-content {
+    padding: 20px;
+  }
+
+  .admin-topbar {
+    padding: 15px 20px;
+  }
+
+  .admin-logo {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .admin-sidebar {
+    width: 150px;
+  }
+
+  .admin-content {
+    margin-left: 150px;
+
+    width: calc(100% - 150px);
+  }
+
+  .admin-nav-link {
+    padding: 10px;
+
+    font-size: 13px;
+  }
+
+  .admin-page-content {
+    padding: 15px;
+  }
+}

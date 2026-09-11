@@ -1,0 +1,596 @@
+.booking-success-page {
+  min-height: 100vh;
+
+  background: #f6f6f8;
+
+  padding: 55px 0 80px;
+}
+
+/* =========================
+   SUCCESS HEADER
+========================= */
+
+.success-header {
+  text-align: center;
+
+  margin-bottom: 35px;
+}
+
+.success-check {
+  width: 74px;
+  height: 74px;
+
+  margin: 0 auto 16px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #e8f8ee;
+
+  color: #198754;
+
+  border-radius: 50%;
+
+  font-size: 38px;
+
+  font-weight: 850;
+
+  box-shadow:
+    0 8px 22px
+    rgba(25, 135, 84, 0.15);
+}
+
+.success-small-title {
+  color: #198754;
+
+  font-size: 11px;
+
+  font-weight: 750;
+
+  letter-spacing: 1.8px;
+}
+
+.success-header h1 {
+  margin: 7px 0;
+
+  color: #171717;
+
+  font-size: 38px;
+
+  font-weight: 850;
+}
+
+.success-header p {
+  color: #777;
+
+  margin: 0;
+}
+
+/* =========================
+   TICKET
+========================= */
+
+.success-ticket {
+  max-width: 950px;
+
+  margin: 0 auto;
+
+  background: white;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  display: grid;
+
+  grid-template-columns:
+    250px 1fr;
+
+  box-shadow:
+    0 10px 35px
+    rgba(0, 0, 0, 0.09);
+}
+
+/* POSTER */
+
+.success-poster {
+  background: #171717;
+
+  min-height: 390px;
+}
+
+.success-poster img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.success-poster-placeholder {
+  width: 100%;
+
+  height: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  font-size: 60px;
+}
+
+/* CONTENT */
+
+.success-content {
+  padding: 30px;
+}
+
+.success-ticket-top {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    flex-start;
+
+  gap: 20px;
+
+  padding-bottom: 20px;
+
+  border-bottom:
+    1px solid #eee;
+}
+
+.booking-reference {
+  color: #f84464;
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  letter-spacing: 1.4px;
+}
+
+.success-ticket-top h2 {
+  margin: 6px 0 4px;
+
+  color: #171717;
+
+  font-size: 28px;
+
+  font-weight: 850;
+}
+
+.success-ticket-top p {
+  color: #888;
+
+  margin: 0;
+
+  font-size: 13px;
+}
+
+.confirmed-badge {
+  background: #e8f8ee;
+
+  color: #198754;
+
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+
+  font-weight: 750;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   INFO GRID
+========================= */
+
+.success-details-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+
+  padding: 24px 0;
+
+  border-bottom:
+    1px solid #eee;
+}
+
+.success-details-grid div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.success-details-grid span {
+  color: #999;
+
+  font-size: 11px;
+}
+
+.success-details-grid strong {
+  color: #292929;
+
+  font-size: 14px;
+}
+
+/* =========================
+   SEATS
+========================= */
+
+.success-seats-section {
+  padding: 22px 0;
+
+  border-bottom:
+    1px solid #eee;
+}
+
+.success-seats-section > span {
+  color: #888;
+
+  font-size: 11px;
+}
+
+.success-seat-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 10px;
+}
+
+.success-seat-list span {
+  min-width: 38px;
+
+  background: #fff0f3;
+
+  color: #f84464;
+
+  border: 1px solid #ffd6dd;
+
+  padding: 6px 9px;
+
+  border-radius: 7px;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  font-weight: 750;
+}
+
+/* =========================
+   TOTAL
+========================= */
+
+.success-total {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items: flex-end;
+
+  gap: 20px;
+
+  padding: 23px 0;
+}
+
+.success-total > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.success-total span {
+  color: #888;
+
+  font-size: 11px;
+}
+
+.success-total strong {
+  color: #f84464;
+
+  font-size: 27px;
+
+  font-weight: 850;
+}
+
+.success-ticket-count {
+  text-align: right;
+}
+
+.success-ticket-count strong {
+  color: #222;
+
+  font-size: 20px;
+}
+
+.success-booked-on {
+  color: #aaa;
+
+  font-size: 11px;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.success-message {
+  max-width: 950px;
+
+  margin: 22px auto 0;
+
+  background: #fff;
+
+  border-radius: 13px;
+
+  padding: 18px 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  box-shadow:
+    0 5px 18px
+    rgba(0, 0, 0, 0.05);
+}
+
+.success-message-icon {
+  width: 45px;
+  height: 45px;
+
+  min-width: 45px;
+
+  background: #fff0f3;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+}
+
+.success-message h4 {
+  margin: 0 0 3px;
+
+  color: #222;
+
+  font-size: 15px;
+
+  font-weight: 750;
+}
+
+.success-message p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 12px;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.success-actions {
+  max-width: 950px;
+
+  margin: 25px auto 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.success-actions button {
+  padding: 11px 20px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+.download-success-btn {
+  border: none;
+
+  background: #f84464;
+
+  color: white;
+}
+
+.download-success-btn:hover:not(:disabled) {
+  background: #dc3656;
+
+  transform:
+    translateY(-1px);
+}
+
+.download-success-btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+.my-bookings-btn {
+  background: #171717;
+
+  color: white;
+
+  border: 1px solid #171717;
+}
+
+.my-bookings-btn:hover {
+  background: #303035;
+}
+
+.back-movies-btn {
+  background: white;
+
+  color: #333;
+
+  border: 1px solid #ddd;
+}
+
+.back-movies-btn:hover {
+  border-color: #f84464;
+
+  color: #f84464;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.booking-success-empty {
+  min-height: 70vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background: #f6f6f8;
+
+  padding: 20px;
+}
+
+.success-empty-icon {
+  font-size: 55px;
+
+  margin-bottom: 15px;
+}
+
+.booking-success-empty h2 {
+  color: #222;
+
+  font-weight: 800;
+}
+
+.booking-success-empty p {
+  color: #777;
+}
+
+.booking-success-empty button {
+  border: none;
+
+  background: #f84464;
+
+  color: white;
+
+  padding: 10px 20px;
+
+  border-radius: 8px;
+
+  font-weight: 650;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+  .success-ticket {
+    grid-template-columns:
+      200px 1fr;
+  }
+
+  .success-details-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+
+  .booking-success-page {
+    padding-top: 35px;
+  }
+
+  .success-header h1 {
+    font-size: 31px;
+  }
+
+  .success-ticket {
+    grid-template-columns: 1fr;
+  }
+
+  .success-poster {
+    height: 420px;
+  }
+
+  .success-content {
+    padding: 22px;
+  }
+
+  .success-actions {
+    flex-direction: column;
+  }
+
+  .success-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+
+  .success-details-grid {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .success-ticket-top {
+    flex-direction: column;
+  }
+
+  .success-total {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .success-ticket-count {
+    text-align: left;
+  }
+
+  .success-poster {
+    height: 350px;
+  }
+}
