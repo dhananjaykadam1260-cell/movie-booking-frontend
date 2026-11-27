@@ -154,8 +154,8 @@ function Payment() {
           setTimeout(resolve, 1500)
       );
 
+      // The user is identified by the auth token, not by the body.
       const bookingData = {
-        userId,
         showId: Number(showId),
         seatIds: selectedSeats
       };
