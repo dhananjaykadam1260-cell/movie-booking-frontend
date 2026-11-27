@@ -1,16 +1,64 @@
-# React + Vite
+# Movie Booking: Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React 19 + Vite single-page app for the movie booking system. Users browse movies, pick seats, pay (demo), and manage their bookings. Admins manage movies, theatres, screens, shows, bookings and users.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19, React Router 7
+- Vite 8
+- Bootstrap 5, axios
 
-## React Compiler
+## Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Start the backend first (see `movie-booking-backend/README.md`), which runs on `http://localhost:8080`.
+2. Install dependencies and configure the API URL:
 
-## Expanding the ESLint configuration
+   ```bash
+   npm install
+   cp .env.example .env   # edit VITE_API_BASE_URL if the backend is elsewhere
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. Run the dev server:
+
+   ```bash
+   npm run dev            # http://localhost:5173
+   ```
+
+## Scripts
+
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Development server |
+| `npm run build` | Production build into `dist/` |
+| `npm run preview` | Serve the production build |
+| `npm run lint` | ESLint |
+
+## Configuration
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `VITE_API_BASE_URL` | `http://localhost:8080/api` | Backend API base URL |
+
+Backend CORS must allow the frontend origin. The backend default is `http://localhost:5173`.
+
+## Authentication
+
+- Login stores the JWT and user details in `localStorage`.
+- Every API request sends `Authorization: Bearer <token>` (`src/services/api.js`).
+- A `401` response from a non-auth endpoint clears the session and redirects to the login page.
+- Route guards for `/admin/*` are a UX convenience only. The backend enforces admin access.
+
+## Project layout
+
+```
+src/
+  services/api.js      Axios instance, auth header, 401 handling
+  pages/               User pages (Home, MovieDetails, Seats, Payment, MyBookings, ...)
+  admin/               Admin pages and the admin route guard
+  components/          Shared components (Navbar)
+```
+
+## Known limits
+
+- Payment is a demo. Card and UPI details are not sent anywhere, and no money is charged.
+- Ticket PDFs are downloaded through the API with the token attached.

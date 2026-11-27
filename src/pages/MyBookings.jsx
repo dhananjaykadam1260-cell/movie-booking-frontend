@@ -8,6 +8,7 @@ function MyBookings() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [downloadingId, setDownloadingId] = useState(null);
+  const [cancellingId, setCancellingId] = useState(null);
 
   const navigate = useNavigate();
 
@@ -94,6 +95,39 @@ function MyBookings() {
       );
     } finally {
       setDownloadingId(null);
+    }
+  };
+
+  const cancelBooking = async (bookingId) => {
+    if (
+      !window.confirm(
+        "Cancel this booking? Your seats will be released."
+      )
+    ) {
+      return;
+    }
+
+    try {
+      setCancellingId(bookingId);
+
+      const response = await api.post(
+        `/bookings/${bookingId}/cancel`
+      );
+
+      setBookings((current) =>
+        current.map((booking) =>
+          booking.id === bookingId
+            ? { ...booking, ...response.data }
+            : booking
+        )
+      );
+    } catch (error) {
+      alert(
+        error.response?.data?.message ||
+        "Unable to cancel this booking."
+      );
+    } finally {
+      setCancellingId(null);
     }
   };
 
@@ -594,6 +628,30 @@ function MyBookings() {
                           : "N/A"}
 
                       </div>
+
+                      {booking.status === "CONFIRMED" && (
+
+                        <button
+                          className="cancel-booking-btn"
+                          onClick={() =>
+                            cancelBooking(
+                              booking.id
+                            )
+                          }
+                          disabled={
+                            cancellingId ===
+                            booking.id
+                          }
+                        >
+
+                          {cancellingId ===
+                          booking.id
+                            ? "Cancelling..."
+                            : "Cancel Booking"}
+
+                        </button>
+
+                      )}
 
                       <button
                         className="download-ticket-btn"
